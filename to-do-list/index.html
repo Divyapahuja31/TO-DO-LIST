@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div><h1 class="page-heading">📝 Your Daily To-Do List</h1></div>
+  <div class="app">
+    <header>
+      <h1 id="quote">“Stay focused and never give up.”</h1>
+      <button id="themeToggle">DARK MODE</button>
+    </header>
+<!-- 
+    Project made by Divya Pahuja. 
+-->
+    <section class="task-input">
+      <input type="text" id="taskText" placeholder="Add a new task...">
+      <input type="date" id="taskDate">
+      <select id="taskPriority">
+        <option value="High">🔥 High</option>
+        <option value="Medium">⭐ Medium</option>
+        <option value="Low">✅ Low</option>
+      </select>
+      <button onclick="addTask()">Add</button>
+      <button onclick="startVoiceInput()">🎤</button>
+    </section>
+
+    <ul id="taskList"></ul>
+
+    <footer>
+      <div id="progressContainer">
+        <div id="progressBar"></div>
+      </div>
+      <p id="taskStats"></p>
+    </footer>
+  </div>
+  <div class="footer">
+    <p>Made with ❤️ by Divya Pahuja</p>
+    <p>Check out my <a href="https://github.com/Divyapahuja31">GitHub</a></p>
+
+  <script src="script.js"></script>
+</body>
+</html>

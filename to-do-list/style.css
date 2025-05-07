@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://t3.ftcdn.net/jpg/05/13/59/72/360_F_513597277_YYqrogAmgRR9ohwTUnOM784zS9eYUcSk.jpg')
+      no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+  
+  .page-heading {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .app {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 100%;
+    max-width: 700px;
+    color: #222;
+    animation: fadeIn 0.6s ease;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+  }
+  
+  #themeToggle {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  #themeToggle:hover {
+    background: linear-gradient(to right, #3a0ca3, #7209b7);
+  }
+  
+  .task-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+  
+  .task-input input,
+  .task-input select,
+  .task-input button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    flex: 1;
+    min-width: 120px;
+    font-size: 15px;
+  }
+  
+  .task-input input,
+  .task-input select {
+    background: #ffffffdd;
+    color: #222;
+  }
+  
+  .task-input button {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .task-input button:hover {
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+  }
+  
+  ul#taskList {
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+  
+  ul#taskList::-webkit-scrollbar {
+    width: 6px;
+  }
+  ul#taskList::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+  }
+  
+  li {
+    background: rgba(255, 255, 255, 0.88);
+    border-left: 6px solid #4a90e2;
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  li span {
+    font-weight: 500;
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  li.high {
+    border-color: #f44336;
+  }
+  li.medium {
+    border-color: #ff9800;
+  }
+  li.low {
+    border-color: #4caf50;
+  }
+  
+  li button {
+    margin-left: 8px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+  li button:hover {
+    color: #e53935;
+  }
+  
+  footer {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  #progressContainer {
+    background: #ddd;
+    border-radius: 10px;
+    height: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  
+  #progressBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+  }
+  
+  #taskStats {
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+  }
+  
+  /* Dark Theme */
+  .theme-dark {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('https://cdn.prod.website-files.com/614716f50b4f49202fdd0087/646c43550c8d2b52196bf421_dark-color-palette.jpg')
+      no-repeat center center/cover;
+    color: #eee;
+  }
+  
+  .theme-dark .app {
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+  }
+  
+  .theme-dark li {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+  }
+  
+  .theme-dark input,
+  .theme-dark select {
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+  }
+  
+  .theme-dark button {
+    color: white;
+  }
+  
+
+  .theme-dark #quote {
+    color: #f1c40f; 
+    font-style: italic;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
